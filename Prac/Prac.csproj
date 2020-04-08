@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <StartupObject>Prac.PropertiesEg</StartupObject>
+    <StartupObject>Prac.Inheritance</StartupObject>
   </PropertyGroup>
 
 </Project>
