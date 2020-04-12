@@ -10,7 +10,7 @@ namespace DictionaryApp
     {
         public void dict()
         {
-            string filePath = @"C:\SampleFile\data.txt";
+            string filePath = @"C:\SampleFile\dictionary.txt";
 
             int i = 0;
             List<string> lines = File.ReadAllLines(filePath).ToList();
