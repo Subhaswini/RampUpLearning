@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <StartupObject>Prac.Delegates</StartupObject>
+    <StartupObject>Prac.AnonymousMethod</StartupObject>
   </PropertyGroup>
 
 </Project>
