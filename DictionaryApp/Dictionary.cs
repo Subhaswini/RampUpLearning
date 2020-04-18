@@ -6,15 +6,21 @@ using System.Text;
 
 namespace DictionaryApp
 {
-    public class Dictionary
+    public abstract class Dictionary
     {
-        public void dict()
+        public abstract void print();
+        public abstract void display();
+
+        public static void Main()
         {
-            string filePath = @"C:\SampleFile\dictionary.txt";
+            Info.dict();
+        }
 
-            int i = 0;
-            List<string> lines = File.ReadAllLines(filePath).ToList();
-
+    }
+    class Info
+    {
+        public static void dict()
+        {
             Misc Misce = new Misc();
             Noun Nouns = new Noun();
             Verb Verbs = new Verb();
@@ -23,6 +29,11 @@ namespace DictionaryApp
             NounAndVerb NV = new NounAndVerb();
             ProperNoun PN = new ProperNoun();
             Preposition PR = new Preposition();
+
+            string filePath = @"C:\SampleFile\dictionary.txt";
+
+            int i = 0;
+            List<string> lines = File.ReadAllLines(filePath).ToList();
 
             foreach (string line in lines)
             {
@@ -36,8 +47,8 @@ namespace DictionaryApp
                         string misc = lines[i - 3];
 
                         //adding defn
-                        string misc1 = lines[i - 2]; 
-                        Misce.getMiscWords(misc,misc1,word);
+                        string misc1 = lines[i - 2];
+                        Misce.getMiscWords(misc, misc1, word);
                         Misce.OnlyMiscWords(misc);
                         break;
 
@@ -123,13 +134,13 @@ namespace DictionaryApp
                 Console.WriteLine("1. Dictionary");
                 Console.WriteLine("2. Word Collection");
                 Console.WriteLine("3. Exit");
-                Console.WriteLine("Make a choice from 1-2: ");
+                Console.WriteLine("Make a choice from 1-3: ");
                 choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
                     case 1:
                         do
-                        {                       
+                        {
                             Console.WriteLine("1. Display Miscellaenous Word Dictionary");
                             Console.WriteLine("2. Display Noun Dictionary");
                             Console.WriteLine("3. Display Adjective Dictionary");
@@ -144,28 +155,28 @@ namespace DictionaryApp
                             switch (Collectionchoice)
                             {
                                 case 1:
-                                    Misce.printmisc();
+                                    Misce.print();
                                     break;
                                 case 2:
-                                    Nouns.printnoun();
+                                    Nouns.print();
                                     break;
                                 case 3:
-                                    adj.printadj();
+                                    adj.print();
                                     break;
                                 case 4:
-                                    Verbs.printverb();
+                                    Verbs.print();
                                     break;
                                 case 5:
-                                    adve.printadv();
+                                    adve.print();
                                     break;
                                 case 6:
-                                    NV.printNounVerb();
+                                    NV.print();
                                     break;
                                 case 7:
-                                    PN.printPN();
+                                    PN.print();
                                     break;
                                 case 8:
-                                    PR.printPrep();
+                                    PR.print();
                                     break;
                                 default:
                                     break;
@@ -175,7 +186,7 @@ namespace DictionaryApp
 
                     case 2:
                         do
-                        {                           
+                        {
                             Console.WriteLine("1. List of Misc Words");
                             Console.WriteLine("2. List of Nouns");
                             Console.WriteLine("3. List of Adjectives");
@@ -190,28 +201,28 @@ namespace DictionaryApp
                             switch (Collectionchoice)
                             {
                                 case 1:
-                                    Misce.displaymisc();
+                                    Misce.display();
                                     break;
                                 case 2:
-                                    Nouns.displaynoun();
+                                    Nouns.display();
                                     break;
                                 case 3:
-                                    adj.displayadj();
+                                    adj.display();
                                     break;
                                 case 4:
-                                    Verbs.displayverb();
+                                    Verbs.display();
                                     break;
                                 case 5:
-                                    adve.displayadv();
+                                    adve.display();
                                     break;
                                 case 6:
-                                    NV.displayNV();
+                                    NV.display();
                                     break;
                                 case 7:
-                                    PN.displayPN();
+                                    PN.display();
                                     break;
                                 case 8:
-                                    PR.displayprep();
+                                    PR.display();
                                     break;
                                 default:
                                     break;
@@ -221,8 +232,10 @@ namespace DictionaryApp
                 }
 
             } while (choice != 3);
-   
+
             Console.ReadLine();
         }
+      
     }
+
 }

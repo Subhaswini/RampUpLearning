@@ -25,7 +25,7 @@ namespace DictionaryApp
 
         }
 
-        public void printadv()
+        public override void print()
         {
             Console.WriteLine();
             Console.WriteLine("--------------------------------------------ADVERB DICTIONARY--------------------------------------");
@@ -36,7 +36,7 @@ namespace DictionaryApp
             }
         }
 
-        public void displayadv()
+        public override void display()
         {
             Console.WriteLine();
             Console.WriteLine("--------------------------------------------LIST OF ADVERBS--------------------------------------");

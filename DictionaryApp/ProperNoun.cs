@@ -31,7 +31,7 @@ namespace DictionaryApp
 
         }
 
-        public void printPN()
+        public override void print()
         {
             Console.WriteLine();
             Console.WriteLine("--------------------------------------------PROPER NOUN DICTIONARY--------------------------------------");
@@ -41,7 +41,7 @@ namespace DictionaryApp
                 Console.WriteLine(x);
             }
         }
-        public void displayPN()
+        public override void display()
         {
             Console.WriteLine();
             Console.WriteLine("--------------------------------------------LIST OF PROPER NOUNS--------------------------------------");

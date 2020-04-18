@@ -25,7 +25,7 @@ namespace DictionaryApp
 
         }
 
-        public void printadj()
+        public override void print()
         {
             Console.WriteLine();
             Console.WriteLine("--------------------------------------------ADJECTIVE DICTIONARY--------------------------------------");
@@ -35,7 +35,7 @@ namespace DictionaryApp
                 Console.WriteLine(x);
             }
         }
-        public void displayadj()
+        public override void display()
         {
             Console.WriteLine();
             Console.WriteLine("--------------------------------------------LIST OF ADJECTIVES--------------------------------------");

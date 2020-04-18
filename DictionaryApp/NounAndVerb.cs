@@ -25,7 +25,7 @@ namespace DictionaryApp
 
         }
 
-        public void printNounVerb()
+        public override void print()
         {
             Console.WriteLine();
             Console.WriteLine("--------------------------------------------NOUN AND VERB DICTIONARY--------------------------------------");
@@ -35,7 +35,7 @@ namespace DictionaryApp
                 Console.WriteLine(x);
             }
         }
-        public void displayNV()
+        public override void display()
         {
             Console.WriteLine();
             Console.WriteLine("--------------------------------------------LIST OF NOUNS AND VERBS--------------------------------------");

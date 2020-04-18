@@ -26,7 +26,7 @@ namespace DictionaryApp
         }
 
 
-        public void printverb()
+        public override void print()
         {
             Console.WriteLine();
             Console.WriteLine("--------------------------------------------VERB DICTIONARY--------------------------------------");
@@ -36,7 +36,7 @@ namespace DictionaryApp
                 Console.WriteLine(x);
             }
         }
-        public void displayverb()
+        public override void display()
         {
             Console.WriteLine();
             Console.WriteLine("--------------------------------------------LIST OF VERBS--------------------------------------");

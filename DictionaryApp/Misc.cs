@@ -13,20 +13,16 @@ namespace DictionaryApp
         {
             miscValues.Add(word);
             miscValues.Add(defn);
-            miscValues.Add(type);
-
-            
+            miscValues.Add(type);   
         }
         public void OnlyMiscWords(string word)
         {
             miscWords.Add(word);
             /*miscValues.Add(defn);
             miscValues.Add(type);*/
-
-
         }
 
-        public void printmisc()
+        public override void print()
         {
             Console.WriteLine();
             Console.WriteLine("--------------------------------------------MISCELLANEOUS DICTIONARY--------------------------------------");
@@ -37,7 +33,7 @@ namespace DictionaryApp
             }
         }
 
-        public void displaymisc()
+        public override void display()
         {
             Console.WriteLine();
             Console.WriteLine("--------------------------------------------MISCELLANEOUS WORDS--------------------------------------");

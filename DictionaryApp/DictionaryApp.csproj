@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <StartupObject>DictionaryApp.Program</StartupObject>
+    <StartupObject>DictionaryApp.Dictionary</StartupObject>
   </PropertyGroup>
 
 </Project>

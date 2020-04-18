@@ -20,7 +20,7 @@ namespace DictionaryApp
 
         }
 
-        public void printnoun()
+        public override void print()
         {
             Console.WriteLine();
             Console.WriteLine("--------------------------------------------NOUN DICTIONARY--------------------------------------");
@@ -31,7 +31,7 @@ namespace DictionaryApp
             }
         }
 
-        public void displaynoun()
+        public override void display()
         {
             Console.WriteLine();
             Console.WriteLine("--------------------------------------------LIST OF NOUNS--------------------------------------");
