@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DictionaryApp
 {
-    public class Noun: Dictionary
+    public class Noun: Dictionary, IDisplay
     {
         List<string> nValues = new List<string>();
         List<string> nWords = new List<string>();
@@ -31,7 +31,7 @@ namespace DictionaryApp
             }
         }
 
-        public override void display()
+        public void display()
         {
             Console.WriteLine();
             Console.WriteLine("--------------------------------------------LIST OF NOUNS--------------------------------------");

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DictionaryApp
 {
-    public class Misc : Dictionary
+    public class Misc : Dictionary, IDisplay
     {
         List<string> miscValues = new List<string>();
         List<string> miscWords = new List<string>();
@@ -33,7 +33,7 @@ namespace DictionaryApp
             }
         }
 
-        public override void display()
+        public void display()
         {
             Console.WriteLine();
             Console.WriteLine("--------------------------------------------MISCELLANEOUS WORDS--------------------------------------");

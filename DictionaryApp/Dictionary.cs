@@ -9,13 +9,17 @@ namespace DictionaryApp
     public abstract class Dictionary
     {
         public abstract void print();
-        public abstract void display();
+        //public abstract void display();
 
         public static void Main()
         {
             Info.dict();
         }
 
+    }
+    interface IDisplay
+    {
+        public void display();
     }
     class Info
     {
@@ -29,6 +33,14 @@ namespace DictionaryApp
             NounAndVerb NV = new NounAndVerb();
             ProperNoun PN = new ProperNoun();
             Preposition PR = new Preposition();
+           /* IDisplay i1 = Misce;
+           *//* IDisplay i2 = Nouns;
+            IDisplay i3 = Verbs;
+            IDisplay i4 = adj;
+            IDisplay i5 = adve;
+            IDisplay i6 = NV;
+            IDisplay i7 = PN;
+            IDisplay i8 = PR;*/
 
             string filePath = @"C:\SampleFile\dictionary.txt";
 
@@ -235,7 +247,7 @@ namespace DictionaryApp
 
             Console.ReadLine();
         }
-      
+
     }
 
 }

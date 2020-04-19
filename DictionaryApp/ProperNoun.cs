@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DictionaryApp
 {
-    public class ProperNoun: Dictionary
+    public class ProperNoun: Dictionary, IDisplay
     {
         List<string> pnValues = new List<string>();
         List<string> pnWords = new List<string>();
@@ -27,8 +27,6 @@ namespace DictionaryApp
             pnWords = pnWords.ConvertAll(r => currentCulture.TextInfo.ToTitleCase(r.ToLower()));
             /*miscValues.Add(defn);
             miscValues.Add(type);*/
-
-
         }
 
         public override void print()
@@ -41,7 +39,7 @@ namespace DictionaryApp
                 Console.WriteLine(x);
             }
         }
-        public override void display()
+        public void display()
         {
             Console.WriteLine();
             Console.WriteLine("--------------------------------------------LIST OF PROPER NOUNS--------------------------------------");

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DictionaryApp
 {
-    public class Verb: Dictionary
+    public class Verb: Dictionary, IDisplay
     {
         List<string> vValues = new List<string>();
         List<string> vWords = new List<string>();
@@ -36,7 +36,7 @@ namespace DictionaryApp
                 Console.WriteLine(x);
             }
         }
-        public override void display()
+        public void display()
         {
             Console.WriteLine();
             Console.WriteLine("--------------------------------------------LIST OF VERBS--------------------------------------");

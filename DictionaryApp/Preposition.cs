@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DictionaryApp
 {
-    class Preposition: Dictionary
+    class Preposition: Dictionary, IDisplay
     {
         List<string> prValues = new List<string>();
         List<string> prWords = new List<string>();
@@ -36,7 +36,7 @@ namespace DictionaryApp
             }
         }
 
-        public override void display()
+        public void display()
         {
             Console.WriteLine();
             Console.WriteLine("--------------------------------------------LIST OF PREPOSITIONS--------------------------------------");

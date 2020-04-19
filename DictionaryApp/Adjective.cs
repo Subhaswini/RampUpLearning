@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DictionaryApp
 {
-    public class Adjective: Dictionary
+    public class Adjective: Dictionary, IDisplay
     {
         List<string> aValues = new List<string>();
         List<string> adjWords = new List<string>();
@@ -35,7 +35,7 @@ namespace DictionaryApp
                 Console.WriteLine(x);
             }
         }
-        public override void display()
+        public void display()
         {
             Console.WriteLine();
             Console.WriteLine("--------------------------------------------LIST OF ADJECTIVES--------------------------------------");

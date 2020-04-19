@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DictionaryApp
 {
-    public class Adverb: Dictionary
+    public class Adverb: Dictionary, IDisplay
     {
         List<string> advValues = new List<string>();
         List<string> advWords = new List<string>();
@@ -21,8 +21,6 @@ namespace DictionaryApp
             advWords.Add(word);
             /*miscValues.Add(defn);
             miscValues.Add(type);*/
-
-
         }
 
         public override void print()
@@ -36,7 +34,7 @@ namespace DictionaryApp
             }
         }
 
-        public override void display()
+        public void display()
         {
             Console.WriteLine();
             Console.WriteLine("--------------------------------------------LIST OF ADVERBS--------------------------------------");
