@@ -25,8 +25,6 @@ namespace DictionaryApp
             pnWords.Add(word);
             CultureInfo currentCulture = System.Threading.Thread.CurrentThread.CurrentCulture;
             pnWords = pnWords.ConvertAll(r => currentCulture.TextInfo.ToTitleCase(r.ToLower()));
-            /*miscValues.Add(defn);
-            miscValues.Add(type);*/
         }
 
         public override void print()
@@ -46,10 +44,6 @@ namespace DictionaryApp
             Console.WriteLine();
             foreach (var x in pnWords)
             {
-
-                /*CultureInfo currentCulture = System.Threading.Thread.CurrentThread.CurrentCulture;
-                pnWords = pnWords.ConvertAll(r => currentCulture.TextInfo.ToTitleCase(r.ToLower()));*/
-                //Console.WriteLine(x, myTI.ToTitleCase(x));
                 Console.WriteLine(x);
             }
 

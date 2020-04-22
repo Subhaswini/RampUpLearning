@@ -33,14 +33,6 @@ namespace DictionaryApp
             NounAndVerb NV = new NounAndVerb();
             ProperNoun PN = new ProperNoun();
             Preposition PR = new Preposition();
-           /* IDisplay i1 = Misce;
-           *//* IDisplay i2 = Nouns;
-            IDisplay i3 = Verbs;
-            IDisplay i4 = adj;
-            IDisplay i5 = adve;
-            IDisplay i6 = NV;
-            IDisplay i7 = PN;
-            IDisplay i8 = PR;*/
 
             string filePath = @"C:\SampleFile\dictionary.txt";
 
