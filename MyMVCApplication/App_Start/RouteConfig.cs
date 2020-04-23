@@ -17,19 +17,32 @@ namespace MyMVCApplication
             name: "MusicStore",
             url: "MusicStore/{action}/{id}",
             defaults: new { controller = "MusicStore", action = "Music", id = UrlParameter.Optional }
-            );    
- 
+            );
+
+            routes.MapRoute(
+            name: "Employee",
+            url: "Employee/{action}/{name}",
+            defaults: new { controller = "Employee", action = "Search", name = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+            name: "Customer",
+            url: "Customer/{action}",
+            defaults: new { controller = "Customer", action = "Index" }
+            );
+
+            routes.MapRoute(
+            name: "Student",
+            url: "Student/{action}",
+            defaults: new { controller = "Student", action = "Index" }
+            );
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "GetDetails", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
 
-           /* routes.MapRoute(
-               name: "MusicStore",
-               url: "MusicStore/{action}/{id}",
-               defaults: new { controller = "MusicStore", action = "Music", id = UrlParameter.Optional }
-           );*/
         }
     }
 }
