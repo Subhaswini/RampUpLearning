@@ -26,6 +26,12 @@ namespace MyMVCApplication
             );
 
             routes.MapRoute(
+            name: "Travel",
+            url: "Travel/{action}",
+            defaults: new { controller = "Travel", action = "Index" }
+            );
+
+            routes.MapRoute(
             name: "Customer",
             url: "Customer/{action}",
             defaults: new { controller = "Customer", action = "Index" }
@@ -40,7 +46,7 @@ namespace MyMVCApplication
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Travel", action = "Index", id = UrlParameter.Optional }
             );
 
         }

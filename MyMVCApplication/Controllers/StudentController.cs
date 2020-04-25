@@ -13,5 +13,10 @@ namespace MyMVCApplication.Controllers
         {
             return View();
         }
+        [Authorize]
+        public ContentResult AuthorisedOnly()
+        {
+            return Content("You are registered user.");
+        }
     }
 }
