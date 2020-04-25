@@ -31,6 +31,15 @@ namespace MyMVCApplication.Controllers
 
             return View();
         }
+        public string GetCurrentTime()
+        {
+            return TimeString();
+        }
+        [NonAction]
+        public string TimeString()
+        {
+            return "Time is " + DateTime.Now.ToString("T");
+        }
 
         public ActionResult Details()
         {
