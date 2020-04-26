@@ -6,7 +6,7 @@ namespace DictApp
 {
     public class Adjective : Word
     {
-        public Adjective(string Words, string Defns) : base(Words, Defns)
+        public Adjective(string Words, string Defns,string Types) : base(Words, Defns,Types)
         {
 
         }

@@ -7,7 +7,7 @@ namespace DictApp
 {
     public class Noun : Word
     {
-        public Noun(string Words, string Defns) : base(Words, Defns)
+        public Noun(string Words, string Defns,string Types) : base(Words, Defns,Types)
         {
             /*NWord = Words;
             NDefn = Defns;*/

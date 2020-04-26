@@ -4,6 +4,9 @@ using System.Text;
 using System.IO;
 using System.ComponentModel.Design;
 using System.Security.Cryptography.X509Certificates;
+using System.Linq;
+using System.Xml.Serialization;
+using System.Security.Cryptography;
 
 namespace DictApp
 {
@@ -17,7 +20,7 @@ namespace DictApp
         
         public static void LoadWord()
         {
-            string textFile = @"C:\SampleFile\data.txt";
+            string textFile = @"C:\SampleFile\dictionary.txt";
             string line;
             if (File.Exists(textFile))
             {
@@ -32,55 +35,105 @@ namespace DictApp
                 switch (Types)
                 {
                     case "misc":
-                        Misc misc = new Misc(Words, Defns);
+                        Misc misc = new Misc(Words, Defns, Types);
                         WordCollection.Add(misc);
-                        break;
+                         break;
                             
-
                     case "n":
-                        WordCollection.Add(new Noun(Words, Defns));
+                        WordCollection.Add(new Noun(Words, Defns,Types));
                         break;
 
 
                     case "adj":
-                        WordCollection.Add(new Adjective(Words, Defns));
+                        WordCollection.Add(new Adjective(Words, Defns,Types));
                         break;
 
                     case "v":
-                        WordCollection.Add(new Verb(Words, Defns));
+                        WordCollection.Add(new Verb(Words, Defns,Types));
                         break;
 
                     case "adv":
-                        WordCollection.Add(new Adverb(Words, Defns));
+                        WordCollection.Add(new Adverb(Words, Defns,Types));
                         break;
 
                     case "n_v":
-                        WordCollection.Add(new NounVerb(Words, Defns));
+                        WordCollection.Add(new NounVerb(Words, Defns,Types));
                         break;
 
                     case "pn":
-                        WordCollection.Add(new ProperNoun(Words, Defns));
+                        WordCollection.Add(new ProperNoun(Words, Defns,Types));
                         break;
 
                     case "prep":
-                        WordCollection.Add(new Preposition(Words, Defns));
+                        WordCollection.Add(new Preposition(Words, Defns,Types));
                         break;
                 }
                 }
                 reader.Close();
             }
-            
         }
-      /*  public static void print()
+        public static void SearchbyWordLambda()
         {
-            //WordCollection.ForEach(Console.WriteLine);
-           *//* foreach (var x in WordCollection)
+            //Console.WriteLine("Searching by word using Lambda Expression");
+            Console.WriteLine("Enter the word:");
+            string input = Console.ReadLine();
+            var searchedWord = WordCollection.Where(x => x._Word == input);
+            foreach (var y in searchedWord)
             {
-                Console.WriteLine("{0}",x._Word);
-                
-                Console.WriteLine("{0}", x._Definition);
-                Console.WriteLine();
-            }*//*
-        }*/
+                Console.WriteLine("Type: {0}", y._Types);
+                Console.WriteLine("Definition: {0}", y._Definition);
+            }
+        }
+        public static void SearchByWordLINQ()
+        {
+/*            Console.WriteLine("--------------------------------------------");
+            Console.WriteLine("Searching by word using Linq Query");*/
+            Console.WriteLine("Enter the word");
+            string input = Console.ReadLine();
+            //To get definition
+            var Def = from w in WordCollection
+            where w._Word == input
+            select w._Definition;
+            foreach (var y in Def)
+            {
+                Console.WriteLine("Definition: {0}",y);
+            }
+            //To get Type
+            var typ = from w in WordCollection
+                    where w._Word == input
+                    select w._Types;
+            foreach (var z in typ)
+            {
+                Console.WriteLine("Type: {0}",z);
+            }
+        }
+        public static void SearchByTypeLINQ()
+        {
+/*            Console.WriteLine("--------------------------------------------");
+            Console.WriteLine("Searching by type using Linq Query");*/
+            Console.WriteLine("Enter the type:");
+            string input = Console.ReadLine();
+            //To get definition
+            var wor = from w in WordCollection
+                      where w._Types == input
+                      select w._Word;
+            Console.WriteLine($"List of {input} in the dictionary:");
+            foreach (var y in wor)
+            {
+                Console.WriteLine(y);
+            }
+        }
+        public static void SearchbyTypeLambda()
+        {
+            //Console.WriteLine("Searching by type using Lambda Expression");
+            Console.WriteLine("Enter the type:");
+            string input = Console.ReadLine();
+            var searchedWord = WordCollection.Where(x => x._Types == input);
+            Console.WriteLine($"List of {input} in the dictionary:");
+            foreach (var y in searchedWord)
+            {
+                Console.WriteLine( y._Word);
+            }
+        }
     }
 }

@@ -6,7 +6,7 @@ namespace DictApp
 {
     public class Misc: Word
     {
-        public Misc(string Words, string Defns) : base(Words, Defns)
+        public Misc(string Words, string Defns, string Types) : base(Words, Defns,Types)
         {
 
         }

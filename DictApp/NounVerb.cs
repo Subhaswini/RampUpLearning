@@ -6,7 +6,7 @@ namespace DictApp
 {
     public class NounVerb : Word
     {
-        public NounVerb(string Words, string Defns) : base(Words, Defns)
+        public NounVerb(string Words, string Defns,string Types) : base(Words, Defns,Types)
         {
 
         }

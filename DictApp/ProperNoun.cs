@@ -6,7 +6,7 @@ namespace DictApp
 {
     public class ProperNoun : Word
     {
-        public ProperNoun(string Words, string Defns) : base(Words, Defns)
+        public ProperNoun(string Words, string Defns,string Types) : base(Words, Defns,Types)
         {
 
         }

@@ -6,7 +6,7 @@ namespace DictApp
 {
     public class Preposition : Word
     {
-        public Preposition(string Words, string Defns) : base(Words, Defns)
+        public Preposition(string Words, string Defns,string Types) : base(Words, Defns,Types)
         {
 
         }
