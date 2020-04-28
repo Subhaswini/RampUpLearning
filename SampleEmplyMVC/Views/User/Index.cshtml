@@ -1,0 +1,32 @@
+﻿@model List<SampleEmplyMVC.Models.User>
+@{
+    ViewData["Title"] = "Functions";
+}
+
+<h1>Functions</h1>
+
+@{
+    void RenderUserInfo(SampleEmplyMVC.Models.User user)
+    {
+        <div class="user-info">
+            @user.LastName, @user.FirstName [@user.Birthday.ToShortDateString()]
+        </div>
+    }
+
+    <h2>Users [sorted by first name]</h2>
+    foreach (var user in Model.OrderBy(x => x.FirstName))
+    {
+        RenderUserInfo(user);
+    }
+
+    <h2>Users [sorted by last name]</h2>
+    foreach (var user in Model.OrderBy(x => x.LastName))
+    {
+        RenderUserInfo(user);
+    }
+}
+Thanks to the local function
+
+@await Html.PartialAsync("_Greeting")
+
+<span>More stuff here....</span>
